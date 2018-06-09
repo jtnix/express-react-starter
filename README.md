@@ -2,6 +2,8 @@
 
 Updated for latest packages as of June 2, 2018, including React v0.16.4
 
+- June 9, 2018 - removed jade package, adds pug - renames error.jade to error.pug, updates web.config accordingly
+
 This is a template for using Express and React in the same project. It is based on Create React App.
 
 Read the article: [Introducing Express React Starter](https://medium.com/burke-knows-words/introducing-express-react-starter-b6d299206a3a)
@@ -10,7 +12,7 @@ OR...
 
 ## Prerequisites
 
-* [create-react-app](https://github.com/facebookincubator/create-react-app)
+- [create-react-app](https://github.com/facebookincubator/create-react-app)
 
 ## Installing
 
