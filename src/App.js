@@ -1,32 +1,39 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = { message: '' };
-  }
+function App() {
+  const [message, setMessage] = React.useState('');
 
-  componentDidMount() {
+  React.useEffect(() => {
     fetch('/api/message')
       .then(response => response.json())
-      .then(json => this.setState({ message: json }));
-  }
+      .then(msg => setMessage(msg));
+  }, []);
 
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>{this.state.message}</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>{message}.</p>
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
         </p>
-      </div>
-    );
-  }
+        <p>
+          Or dive into <code>server/routes</code> and add more service APIs to
+          the backend.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
 }
 
 export default App;

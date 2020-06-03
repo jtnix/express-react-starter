@@ -1,18 +1,28 @@
-# Express React Starter
+# React Served
 
-Updated for latest packages as of June 2, 2018, including React v0.16.4
+A React + Express template application.
 
-- June 9, 2018 - removed jade package, adds pug - renames error.jade to error.pug, updates web.config accordingly
+Updated for latest packages as of June 2, 2020; React v16.13.1
+Adds styled-components, axios packages and es-lint and prettier configurations.
+Updates to latest CRA files and format, using hooks on demo page.
 
-This is a template for using Express and React in the same project. It is based on Create React App.
+To enable all eslint and prettier features in Visual Studio Code, add this to your project workspace settings:
 
-Read the article: [Introducing Express React Starter](https://medium.com/burke-knows-words/introducing-express-react-starter-b6d299206a3a)
-
-OR...
+```json
+{
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "eslint.alwaysShowStatus": true,
+  "editor.tabSize": 2
+}
+```
 
 ## Prerequisites
 
-- [create-react-app](https://github.com/facebookincubator/create-react-app)
+- [create-react-app](https://github.com/facebook/create-react-app)
 
 ## Installing
 
@@ -24,30 +34,26 @@ npm install
 
 ## Running The App
 
-The template can be run in development, or in production. For development, simply:
-
 ```bash
 npm start
 ```
 
-![Imgur](http://i.imgur.com/f7Nlvx4.png)
+The "Welcome to React, Served" comes from the Express server.
 
-The "Welcome to React" is a message that comes from the Express server.
-
-### What Is Happening Here?
+### What Is Happening ?
 
 Create React App and the Express server are running on different processes. This is so that React can still use in memory Webpack to do hot reloads really fast.
 
 All AJAX/fetch requests to `/api` are sent back to the Express server which is serving all `/api` routes from the `routes/index.js` file. This is done via a proxy setup in the `package.json` file.
 
-## Building For Production
+## Production
 
-In production, you want Express to serve up your app.
-
-### Build React App
+For production, Express will serve your app.
 
 ```bash
 npm build
 ```
 
 Visit the Express app at 'http://localhost:3001' and you will see your app served from the 'build' folder. That's all there is to it!
+
+Revised from: [Introducing Express React Starter](https://medium.com/burke-knows-words/introducing-express-react-starter-b6d299206a3a)
